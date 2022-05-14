@@ -37,6 +37,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         
         self.secondInterval = 1;
         self.minuteInterval = 1;
+        
+        NSDate *currentDate = [NSDate date];
+        self.minimumDate = currentDate;
+        self.maximumDate = [currentDate initWithTimeIntervalSinceNow: 24 * 60 * 60 * 7];
     }
     return self;
 }
