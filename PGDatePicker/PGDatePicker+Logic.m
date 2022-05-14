@@ -126,6 +126,9 @@
         if (min > max) {
             min = 0;
         }
+        if (min == max) {
+            max = 23;
+        }
         NSMutableArray *hours = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i++) {
             [hours addObject:[@(i) stringValue]];
@@ -169,6 +172,9 @@
         NSInteger max = self.maximumComponents.hour;
         if (min > max) {
             min = 0;
+        }
+        if (min == max) {
+            max = 23;
         }
         NSMutableArray *hours = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i++) {
@@ -223,6 +229,9 @@
         if (min > max) {
             min = 0;
         }
+        if (min == max) {
+            max = 23;
+        }
         NSMutableArray *hours = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i++) {
             [hours addObject:[@(i) stringValue]];
@@ -272,6 +281,9 @@
         NSInteger max = self.maximumComponents.minute;
         if (min > max) {
             min = 0;
+        }
+        if (min == max) {
+            max = 59;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
@@ -332,6 +344,9 @@
         NSInteger max = self.maximumComponents.minute;
         if (min > max) {
             min = 0;
+        }
+        if (min == max) {
+            max = 59;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
@@ -401,6 +416,9 @@
         if (min > max) {
             min = 0;
         }
+        if (min == max) {
+            max = 59;
+        }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
             if (i < 10) {
@@ -460,6 +478,9 @@
         if (min > max) {
             min = 0;
         }
+        if (min == max) {
+            max = 59;
+        }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i++) {
             [minutes addObject:[@(i) stringValue]];
@@ -472,6 +493,9 @@
         NSInteger max = self.maximumComponents.minute;
         if (min > max) {
             min = 0;
+        }
+        if (min == max) {
+            max = 59;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
@@ -532,6 +556,9 @@
         NSInteger max = self.maximumComponents.minute;
         if (min > max) {
             min = 0;
+        }
+        if (min == max) {
+            max = 59;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
@@ -599,6 +626,9 @@
         if (min > max) {
             min = 0;
         }
+        if (min == max) {
+            max = 59;
+        }
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i+=self.secondInterval) {
             if (i < 10) {
@@ -661,6 +691,9 @@
         NSInteger max = self.maximumComponents.second;
         if (min > max) {
             min = 0;
+        }
+        if (min == max) {
+            max = 59;
         }
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i+=self.secondInterval) {
@@ -735,6 +768,9 @@
         if (min > max) {
             min = 0;
         }
+        if (min == max) {
+            max = 59;
+        }
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i+=self.secondInterval) {
             if (i < 10) {
@@ -797,6 +833,9 @@
         NSInteger max = self.maximumComponents.second;
         if (min > max) {
             min = 0;
+        }
+        if (min == max) {
+            max = 59;
         }
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:max-min];
         for (NSUInteger i = min; i <= max; i+=self.secondInterval) {
