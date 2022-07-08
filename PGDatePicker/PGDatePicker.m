@@ -39,15 +39,15 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         self.minuteInterval = 1;
         
         NSDate *now = [NSDate date];
-        NSCalendar *cal = [NSCalendar currentCalendar];
-        unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSCalendarUnitHour | NSMinuteCalendarUnit |NSSecondCalendarUnit;
-        NSDateComponents *zeroCom = [cal components:unitFlags fromDate:now];
-        /// 转化成当天凌晨零点时间
-        zeroCom.hour = 0;
-        zeroCom.minute = 0;
-        zeroCom.second = 0;
-        /// NSdatecomponents转NSdate类型
-        NSDate *newdate = [cal dateFromComponents:zeroCom];
+        NSCalendar *cal = [NSCalendar currentCalendar];
+        unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute |NSCalendarUnitSecond;
+        NSDateComponents *zeroCom = [cal components:unitFlags fromDate:now];
+        /// 转化成当天凌晨零点时间
+        zeroCom.hour = 0;
+        zeroCom.minute = 0;
+        zeroCom.second = 0;
+        /// NSdatecomponents转NSdate类型
+        NSDate *newdate = [cal dateFromComponents:zeroCom];
         self.minimumDate = newdate;
         NSDate *newDate = [newdate dateByAddingTimeInterval:24 * 60 * 60 * 7.9999];
         self.maximumDate = newDate;
