@@ -38,9 +38,20 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         self.secondInterval = 1;
         self.minuteInterval = 1;
         
-        NSDate *currentDate = [NSDate date];
-        self.minimumDate = currentDate;
-        self.maximumDate = [currentDate initWithTimeIntervalSinceNow: 24 * 60 * 60 * 7];
+        NSDate *now = [NSDate date];
+        NSCalendar *cal = [NSCalendar currentCalendar];
+        unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSCalendarUnitHour | NSMinuteCalendarUnit |NSSecondCalendarUnit;
+        NSDateComponents *zeroCom = [cal components:unitFlags fromDate:now];
+        /// 转化成当天凌晨零点时间
+        zeroCom.hour = 0;
+        zeroCom.minute = 0;
+        zeroCom.second = 0;
+        /// NSdatecomponents转NSdate类型
+        NSDate *newdate = [cal dateFromComponents:zeroCom];
+        self.minimumDate = newdate;
+        NSDate *newDate = [newdate dateByAddingTimeInterval:24 * 60 * 60 * 7.9999];
+        self.maximumDate = newDate;
+        NSLog(@"self.minimumDate = %@, self.maximumDate = %@, newDate = %@", self.minimumDate, self.maximumDate, newDate);
     }
     return self;
 }
